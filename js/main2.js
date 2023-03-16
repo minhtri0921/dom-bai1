@@ -17,4 +17,25 @@ const listNews = [
         title: 'Hướng dẫn chọn trang phục cho teengirl ngày 8/3',
         content: 'Các teen girl nhà mình hẳn đang rất hào hứng chọn những bộ đồ thật đẹp để đi chơi 8/3. Những gợi ý ăn mặc dưới đây sẽ giúp các nàng có những set đồ thật đẹp để diện trong ngày 8.3 nhé!'
     }
-];
+]
+
+var heading = document.querySelector("h1");
+heading.innerText = 'Trang tin VinaEnter Edu';
+
+function render(news) {
+    return `<a href="#"><img src=${news.img} alt="h1.jpg" /></a>
+    <div class="khoiphai">
+        <h2><a href="#">${news.title}</a></h2>
+        <p>${news.content}</p>
+    </div>
+    <div class="clr"></div>`
+}
+function render1(list) {
+    let listElement = document.querySelector('ul')
+    let str = ''
+    for (const news of list) {
+        str += render(news)
+    }
+    listElement.innerHTML = str
+}
+render1(listNews)
